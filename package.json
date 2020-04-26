@@ -1,6 +1,6 @@
 {
   "name" : "wmodulefortesting2", 
-  "version" : "0.0.31", 
+  "version" : "0.0.32", 
   "engine" : "node >= 8.0.0", 
   "description" : "Module for testing. This module is test assets not intended to be used with another purpose.", 
   "author" : "Kostiantyn Wandalen <wanalen@willbe.so>", 
@@ -22,7 +22,7 @@
   {
     "url" : "https://github.com/Wandalen/wModuleForTesting2/issues"
   }, 
-  "dependencies" : {}, 
+  "dependencies" : { "wmodulefortesting1" : "alpha" }, 
   "devDependencies" : { "wModuleForTesting2" : "file:.", "wTesting" : "alpha" }, 
   "keywords" : [ "willbe", "test" ]
 }
