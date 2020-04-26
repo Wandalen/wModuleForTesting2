@@ -1,28 +1,28 @@
 {
-  "name" : "wmodulefortesting2", 
-  "version" : "0.0.32", 
-  "engine" : "node >= 8.0.0", 
-  "description" : "Module for testing. This module is test assets not intended to be used with another purpose.", 
-  "author" : "Kostiantyn Wandalen <wanalen@willbe.so>", 
-  "license" : "MIT", 
-  "contributors" : 
+  "name" : "wmodulefortesting2",
+  "version" : "0.0.33",
+  "engine" : "node >= 8.0.0",
+  "description" : "Module for testing. This module is test assets not intended to be used with another purpose.",
+  "author" : "Kostiantyn Wandalen <wanalen@willbe.so>",
+  "license" : "MIT",
+  "contributors" :
   [
-    { "name" : "Kostiantyn Wandalen", "email" : "wanalen@willbe.so" }, 
+    { "name" : "Kostiantyn Wandalen", "email" : "wanalen@willbe.so" },
     { "name" : "Kryvoruchko Dmytro", "email" : "dm.vict.kr@gmail.com" }
-  ], 
-  "main" : "proto/dwtools/abase/l2/Include.s", 
-  "files" : [ "proto/dwtools/abase/l2", "out" ], 
-  "scripts" : { "test" : "wtest .run proto/**", "docgen" : "wdocgen proto" }, 
-  "repository" : 
+  ],
+  "main" : "proto/dwtools/abase/l2/Include.s",
+  "files" : [ "proto/dwtools/abase/l2", "out" ],
+  "scripts" : { "test" : "wtest .run proto/**", "docgen" : "wdocgen proto" },
+  "repository" :
   {
-    "type" : "git", 
+    "type" : "git",
     "url" : "https://github.com/Wandalen/wModuleForTesting2.git"
-  }, 
-  "bugs" : 
+  },
+  "bugs" :
   {
     "url" : "https://github.com/Wandalen/wModuleForTesting2/issues"
-  }, 
-  "dependencies" : { "wmodulefortesting1" : "" }, 
-  "devDependencies" : { "wModuleForTesting2" : "file:.", "wTesting" : "" }, 
+  },
+  "dependencies" : { "wmodulefortesting1" : "" },
+  "devDependencies" : { "wModuleForTesting2" : "file:.", "wTesting" : "" },
   "keywords" : [ "willbe", "test" ]
 }
