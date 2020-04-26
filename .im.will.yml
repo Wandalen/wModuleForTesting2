@@ -2,7 +2,7 @@ submodule :
 
   wModuleForTesting1 :
     path : git+https:///github.com/Wandalen/wModuleForTesting1.git
-    enabled : 0
+    enabled : 1
   wTesting :
     path : npm:///wTesting
     enabled : 0
