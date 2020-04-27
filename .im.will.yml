@@ -1,13 +1,10 @@
 submodule :
 
-  wTools :
-    path : npm:///wTools
-    enabled : 0
-  Self :
-   path : hd://.
-   enabled : 0
-   criterion :
-     development : 1
+  # Self :
+  #  path : hd://.
+  #  enabled : 0
+  #  criterion :
+  #    development : 1
   wTesting :
     path : npm:///wTesting
     enabled : 0
