@@ -1500,9 +1500,7 @@ module:
       ../.im.will.yml:
         hash: f479e61767eb1c57b7da17823efad10c
         size: 4951
-      wModuleForTesting2.out.will.yml:
-        hash: 64041ec382fdeba98fb4330877abed8a
-        size: 77375
+      wModuleForTesting2.out.will.yml: *ref_0
   ../.module/wModuleForTesting1/:
     about:
       name: wModuleForTesting1
