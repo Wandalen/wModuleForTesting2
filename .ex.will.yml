@@ -3,7 +3,7 @@ about :
 
   name : 'wModuleForTesting2'
   description : 'Module for testing. This module is test assets not intended to be used with another purpose.'
-  version : '0.0.1'
+  version : '0.1.0'
   enabled : 1
   interpreters :
   - njs >= 8.0.0
