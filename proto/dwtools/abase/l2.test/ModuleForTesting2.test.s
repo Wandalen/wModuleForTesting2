@@ -5,7 +5,7 @@
 if( typeof module !== 'undefined' )
 {
 
-  var _ = require( '../l2/Include.s' );
+  var _ = require( '../l2/testing2/Include.s' );
 
   require( 'wTesting' );
 
@@ -17,7 +17,7 @@ if( typeof module !== 'undefined' )
 // test
 // --
 
-function trivial( test ) 
+function trivial( test )
 {
   test.case = 'sum of positive numbers';
   var got = _.mulOfNumbers( 1, 2 );
