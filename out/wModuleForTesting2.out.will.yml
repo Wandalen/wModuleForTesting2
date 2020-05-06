@@ -2,22 +2,19 @@ format: outwillfile-2.0
 root:
   - wModuleForTesting2.out
 consistency:
-  wModuleForTesting2.out.will.yml: &ref_0
-    hash: 64041ec382fdeba98fb4330877abed8a
-    size: 77375
-  ../.ex.will.yml: &ref_1
-    hash: 4e6b473248821ec273f0089a0f731190
+  ../.ex.will.yml: &ref_0
+    hash: 945aee5db75d34471f13522daf20765a
     size: 1855
-  ../.im.will.yml: &ref_2
-    hash: f479e61767eb1c57b7da17823efad10c
-    size: 4951
-  ../.module/wModuleForTesting1/.ex.will.yml: &ref_3
+  ../.im.will.yml: &ref_1
+    hash: 856889e097dc2ff21ebfdb35873a1406
+    size: 4976
+  ../.module/wModuleForTesting1/.ex.will.yml: &ref_6
     hash: cb8e18ffa43d15a96d796fd81fa20120
     size: 1855
-  ../.module/wModuleForTesting1/.im.will.yml: &ref_4
+  ../.module/wModuleForTesting1/.im.will.yml: &ref_7
     hash: 552773b8e3ee39ec5d575ea990c02c0d
     size: 4835
-  ../.module/wModuleForTesting1/out/wModuleForTesting1.out.will.yml: &ref_5
+  ../.module/wModuleForTesting1/out/wModuleForTesting1.out.will.yml: &ref_8
     hash: a27c88b8461427fd08f6ee47117e05e0
     size: 38053
 module:
@@ -29,21 +26,21 @@ module:
         Module for testing. This module is test assets not intended to be used
         with another purpose.
       enabled: 1
-      version: 0.0.1
-      interpreters:
+      version: 0.1.0
+      interpreters: &ref_2
         - njs >= 8.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords:
+      keywords: &ref_3
         - willbe
         - test
       license: MIT
       author: Kostiantyn Wandalen <wanalen@willbe.so>
-      contributors:
+      contributors: &ref_4
         - Kostiantyn Wandalen <wanalen@willbe.so>
         - Kryvoruchko Dmytro <dm.vict.kr@gmail.com>
       npm.name: wmodulefortesting2
-      npm.scripts:
+      npm.scripts: &ref_5
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -125,7 +122,7 @@ module:
       entry.proto.no.tests:
         criterion:
           tests: no.tests
-        path: ../proto/dwtools/abase/l2/Include.s
+        path: ../proto/dwtools/abase/l2/testing2/Include.s
       entry.proto.only.tests:
         criterion:
           tests: only.tests
@@ -135,13 +132,13 @@ module:
           debug: debug
           raw: raw
           content: prime
-        path: '{path::out.*=1}/proto/dwtools/abase/l2/Include.s'
+        path: '{path::out.*=1}/proto/dwtools/abase/l2/testing2/Include.s'
       entry.out.raw.debug.release:
         criterion:
           debug: release
           raw: raw
           content: prime
-        path: '{path::out.*=1}/proto/dwtools/abase/l2/Include.s'
+        path: '{path::out.*=1}/proto/dwtools/abase/l2/testing2/Include.s'
       entry.out.compiled.debug.debug:
         criterion:
           debug: debug
@@ -168,16 +165,17 @@ module:
         path:
           - ../proto
           - ../proto/dwtools
+          - ../proto/dwtools/Tools.s
           - ../proto/dwtools/abase
           - ../proto/dwtools/abase/l2
-          - ../proto/dwtools/abase/l2/Include.s
-          - ../proto/dwtools/abase/l2/l1
-          - ../proto/dwtools/abase/l2/l1/ModuleForTesting2.s
+          - ../proto/dwtools/abase/l2/testing2
+          - ../proto/dwtools/abase/l2/testing2/Include.s
+          - ../proto/dwtools/abase/l2/testing2/ModuleForTesting2.s
           - ../proto/dwtools/abase/l2.test
           - ../proto/dwtools/abase/l2.test/ModuleForTesting2.test.s
     submodule:
       wModuleForTesting1:
-        path: 'git+https:///github.com/Wandalen/wModuleForTesting1.git'
+        path: 'git+https:///github.com/Wandalen/wModuleForTesting1.git/@gamma'
         autoExporting: 0
         enabled: 1
       wTesting:
@@ -195,6 +193,7 @@ module:
         dst:
           prefixPath: ''
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           debug: debug
@@ -210,6 +209,7 @@ module:
         dst:
           prefixPath: ''
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           debug: release
@@ -225,6 +225,7 @@ module:
         dst:
           prefixPath: ''
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           debug: debug
@@ -240,6 +241,7 @@ module:
         dst:
           prefixPath: ''
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           debug: release
@@ -255,6 +257,7 @@ module:
         dst:
           prefixPath: ''
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           raw: raw
           debug: release
@@ -271,6 +274,7 @@ module:
         dst:
           prefixPath: ''
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           raw: compiled
@@ -288,6 +292,7 @@ module:
         dst:
           prefixPath: ''
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           raw: compiled
@@ -304,6 +309,7 @@ module:
         dst:
           prefixPath: ''
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: only.tests
           raw: compiled
@@ -320,6 +326,7 @@ module:
         dst:
           prefixPath: ''
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: only.tests
           raw: compiled
@@ -333,6 +340,7 @@ module:
             '**': ''
           prefixPath: ../proto
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           generated: 1
           content: proto
@@ -346,6 +354,7 @@ module:
           recursive: 0
         recursive: 0
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           generated: 1
           content: proto
@@ -701,24 +710,6 @@ module:
           content: prime
         inherit:
           - files.transpile
-      exported.proto.export:
-        opts:
-          reflector: 'reflector::exported.proto.export*'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.files.proto.export:
-        opts:
-          reflector: 'reflector::exported.files.proto.export*'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
     build:
       proto.export:
         steps:
@@ -795,7 +786,7 @@ module:
           - 'build::npm'
     exported:
       proto.export:
-        version: 0.0.1
+        version: 0.1.0
         recursive: 0
         withIntegrated: 2
         tar: 0
@@ -807,9 +798,8 @@ module:
           content: proto
           export: 1
     consistency:
-      wModuleForTesting2.out.will.yml: *ref_0
-      ../.ex.will.yml: *ref_1
-      ../.im.will.yml: *ref_2
+      ../.ex.will.yml: *ref_0
+      ../.im.will.yml: *ref_1
   ../:
     about:
       name: wModuleForTesting2
@@ -818,23 +808,14 @@ module:
         Module for testing. This module is test assets not intended to be used
         with another purpose.
       enabled: 1
-      version: 0.0.1
-      interpreters:
-        - njs >= 8.0.0
-        - chrome >= 60.0.0
-        - firefox >= 60.0.0
-      keywords:
-        - willbe
-        - test
+      version: 0.1.0
+      interpreters: *ref_2
+      keywords: *ref_3
       license: MIT
       author: Kostiantyn Wandalen <wanalen@willbe.so>
-      contributors:
-        - Kostiantyn Wandalen <wanalen@willbe.so>
-        - Kryvoruchko Dmytro <dm.vict.kr@gmail.com>
+      contributors: *ref_4
       npm.name: wmodulefortesting2
-      npm.scripts:
-        test: wtest .run proto/**
-        docgen: wdocgen .build proto
+      npm.scripts: *ref_5
     path:
       module.willfiles:
         criterion:
@@ -914,7 +895,7 @@ module:
       entry.proto.no.tests:
         criterion:
           tests: no.tests
-        path: proto/dwtools/abase/l2/Include.s
+        path: proto/dwtools/abase/l2/testing2/Include.s
       entry.proto.only.tests:
         criterion:
           tests: only.tests
@@ -924,13 +905,13 @@ module:
           debug: debug
           raw: raw
           content: prime
-        path: '{path::out.*=1}/proto/dwtools/abase/l2/Include.s'
+        path: '{path::out.*=1}/proto/dwtools/abase/l2/testing2/Include.s'
       entry.out.raw.debug.release:
         criterion:
           debug: release
           raw: raw
           content: prime
-        path: '{path::out.*=1}/proto/dwtools/abase/l2/Include.s'
+        path: '{path::out.*=1}/proto/dwtools/abase/l2/testing2/Include.s'
       entry.out.compiled.debug.debug:
         criterion:
           debug: debug
@@ -945,7 +926,7 @@ module:
         path: '{path::out.*=}/source/Index.s'
     submodule:
       wModuleForTesting1:
-        path: 'git+https:///github.com/Wandalen/wModuleForTesting1.git'
+        path: 'git+https:///github.com/Wandalen/wModuleForTesting1.git/@gamma'
         autoExporting: 0
         enabled: 1
       wTesting:
@@ -960,6 +941,7 @@ module:
           filePath:
             'path::proto': '{path::out.*=1}/source'
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           debug: debug
@@ -972,6 +954,7 @@ module:
           filePath:
             'path::proto': '{path::out.*=1}/source'
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           debug: release
@@ -984,6 +967,7 @@ module:
           filePath:
             'path::proto': '{path::out.*=1}/source'
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           debug: debug
@@ -996,6 +980,7 @@ module:
           filePath:
             'path::proto': '{path::out.*=1}/source'
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           debug: release
@@ -1008,6 +993,7 @@ module:
           filePath:
             'path::proto': '{path::out.raw.release}'
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           raw: raw
           debug: release
@@ -1021,6 +1007,7 @@ module:
             '**.test/**': 0
             'path::proto': '{path::out.*=1}/Main.s'
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           raw: compiled
@@ -1035,6 +1022,7 @@ module:
             '**.test/**': 0
             'path::proto': '{path::out.*=1}/Main.s'
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           raw: compiled
@@ -1048,6 +1036,7 @@ module:
             '**.test*': 1
             'path::proto': '{path::out.*=1}/Tests.test.s'
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: only.tests
           raw: compiled
@@ -1061,6 +1050,7 @@ module:
             '**.test*': 1
             'path::proto': '{path::out.*=1}/Tests.test.s'
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: only.tests
           raw: compiled
@@ -1495,12 +1485,11 @@ module:
           - 'build::npm'
     consistency:
       ../.ex.will.yml:
-        hash: 4e6b473248821ec273f0089a0f731190
+        hash: 945aee5db75d34471f13522daf20765a
         size: 1855
       ../.im.will.yml:
-        hash: f479e61767eb1c57b7da17823efad10c
-        size: 4951
-      wModuleForTesting2.out.will.yml: *ref_0
+        hash: 856889e097dc2ff21ebfdb35873a1406
+        size: 4976
   ../.module/wModuleForTesting1/:
     about:
       name: wModuleForTesting1
@@ -1654,6 +1643,7 @@ module:
           filePath:
             'path::proto': '{path::out.*=1}/source'
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           debug: debug
@@ -1666,6 +1656,7 @@ module:
           filePath:
             'path::proto': '{path::out.*=1}/source'
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           debug: release
@@ -1678,6 +1669,7 @@ module:
           filePath:
             'path::proto': '{path::out.*=1}/source'
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           debug: debug
@@ -1690,6 +1682,7 @@ module:
           filePath:
             'path::proto': '{path::out.*=1}/source'
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           debug: release
@@ -1702,6 +1695,7 @@ module:
           filePath:
             'path::proto': '{path::out.raw.release}'
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           raw: raw
           debug: release
@@ -1711,10 +1705,11 @@ module:
       transpile.proto.no.tests.compiled.debug:
         src:
           filePath:
-            '**.test*': false
-            '**.test/**': false
+            '**.test*': 0
+            '**.test/**': 0
             'path::proto': '{path::out.*=1}/Main.s'
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           raw: compiled
@@ -1725,10 +1720,11 @@ module:
       transpile.proto.no.tests.compiled.release:
         src:
           filePath:
-            '**.test*': false
-            '**.test/**': false
+            '**.test*': 0
+            '**.test/**': 0
             'path::proto': '{path::out.*=1}/Main.s'
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           raw: compiled
@@ -1739,9 +1735,10 @@ module:
       transpile.proto.only.tests.compiled.debug:
         src:
           filePath:
-            '**.test*': true
+            '**.test*': 1
             'path::proto': '{path::out.*=1}/Tests.test.s'
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: only.tests
           raw: compiled
@@ -1752,9 +1749,10 @@ module:
       transpile.proto.only.tests.compiled.release:
         src:
           filePath:
-            '**.test*': true
+            '**.test*': 1
             'path::proto': '{path::out.*=1}/Tests.test.s'
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: only.tests
           raw: compiled
@@ -2188,9 +2186,9 @@ module:
           - 'build::release'
           - 'build::npm'
     consistency:
-      ../.module/wModuleForTesting1/.ex.will.yml: *ref_3
-      ../.module/wModuleForTesting1/.im.will.yml: *ref_4
-      ../.module/wModuleForTesting1/out/wModuleForTesting1.out.will.yml: *ref_5
+      ../.module/wModuleForTesting1/.ex.will.yml: *ref_6
+      ../.module/wModuleForTesting1/.im.will.yml: *ref_7
+      ../.module/wModuleForTesting1/out/wModuleForTesting1.out.will.yml: *ref_8
   ../.module/wModuleForTesting1/out/wModuleForTesting1.out:
     about:
       name: wModuleForTesting1
@@ -2368,6 +2366,7 @@ module:
         dst:
           prefixPath: ''
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           debug: debug
@@ -2383,6 +2382,7 @@ module:
         dst:
           prefixPath: ''
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           debug: release
@@ -2398,6 +2398,7 @@ module:
         dst:
           prefixPath: ''
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           debug: debug
@@ -2413,6 +2414,7 @@ module:
         dst:
           prefixPath: ''
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           debug: release
@@ -2428,6 +2430,7 @@ module:
         dst:
           prefixPath: ''
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           raw: raw
           debug: release
@@ -2444,6 +2447,7 @@ module:
         dst:
           prefixPath: ''
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           raw: compiled
@@ -2461,6 +2465,7 @@ module:
         dst:
           prefixPath: ''
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           raw: compiled
@@ -2477,6 +2482,7 @@ module:
         dst:
           prefixPath: ''
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: only.tests
           raw: compiled
@@ -2493,6 +2499,7 @@ module:
         dst:
           prefixPath: ''
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           tests: only.tests
           raw: compiled
@@ -2506,6 +2513,7 @@ module:
             '**': ''
           prefixPath: ../proto
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           generated: 1
           content: proto
@@ -2519,6 +2527,7 @@ module:
           recursive: 0
         recursive: 0
         mandatory: 1
+        dstRewritingOnlyPreserving: 1
         criterion:
           generated: 1
           content: proto
@@ -2980,6 +2989,12 @@ module:
           content: proto
           export: 1
     consistency:
-      ../.module/wModuleForTesting1/out/wModuleForTesting1.out.will.yml: *ref_5
-      ../.module/wModuleForTesting1/.ex.will.yml: *ref_3
-      ../.module/wModuleForTesting1/.im.will.yml: *ref_4
+      ../.module/wModuleForTesting1/out/wModuleForTesting1.out.will.yml:
+        hash: a27c88b8461427fd08f6ee47117e05e0
+        size: 38053
+      ../.module/wModuleForTesting1/.ex.will.yml:
+        hash: cb8e18ffa43d15a96d796fd81fa20120
+        size: 1855
+      ../.module/wModuleForTesting1/.im.will.yml:
+        hash: 552773b8e3ee39ec5d575ea990c02c0d
+        size: 4835
