@@ -5,10 +5,10 @@ submodule :
   #  enabled : 0
   #  criterion :
   #    development : 1
-  wModuleForTesting1 :
+  ModuleForTesting1 :
     path : git+https:///github.com/Wandalen/wModuleForTesting1.git/@gamma
     enabled : 1
-  wTesting :
+  Testing :
     path : npm:///wTesting
     enabled : 0
     criterion :
