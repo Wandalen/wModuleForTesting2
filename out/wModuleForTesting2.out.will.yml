@@ -6,17 +6,17 @@ consistency:
     hash: 945aee5db75d34471f13522daf20765a
     size: 1855
   ../.im.will.yml: &ref_1
-    hash: 856889e097dc2ff21ebfdb35873a1406
-    size: 4976
-  ../.module/wModuleForTesting1/.ex.will.yml: &ref_6
+    hash: 79b27ee61127e20e8f0aa6fd5d732702
+    size: 4974
+  ../.module/ModuleForTesting1/.ex.will.yml: &ref_6
     hash: cb8e18ffa43d15a96d796fd81fa20120
     size: 1855
-  ../.module/wModuleForTesting1/.im.will.yml: &ref_7
-    hash: 552773b8e3ee39ec5d575ea990c02c0d
-    size: 4835
-  ../.module/wModuleForTesting1/out/wModuleForTesting1.out.will.yml: &ref_8
-    hash: a27c88b8461427fd08f6ee47117e05e0
-    size: 38053
+  ../.module/ModuleForTesting1/.im.will.yml: &ref_7
+    hash: 61158bfe28020fc446901fcb902af53b
+    size: 4862
+  ../.module/ModuleForTesting1/out/wModuleForTesting1.out.will.yml: &ref_8
+    hash: 54ae911b147c19797ad80401792063b2
+    size: 38676
 module:
   wModuleForTesting2.out:
     about:
@@ -174,11 +174,11 @@ module:
           - ../proto/dwtools/abase/l2.test
           - ../proto/dwtools/abase/l2.test/ModuleForTesting2.test.s
     submodule:
-      wModuleForTesting1:
+      ModuleForTesting1:
         path: 'git+https:///github.com/Wandalen/wModuleForTesting1.git/@gamma'
         autoExporting: 0
         enabled: 1
-      wTesting:
+      Testing:
         path: 'npm:///wTesting'
         autoExporting: 0
         enabled: 0
@@ -925,11 +925,11 @@ module:
           content: prime
         path: '{path::out.*=}/source/Index.s'
     submodule:
-      wModuleForTesting1:
+      ModuleForTesting1:
         path: 'git+https:///github.com/Wandalen/wModuleForTesting1.git/@gamma'
         autoExporting: 0
         enabled: 1
-      wTesting:
+      Testing:
         path: 'npm:///wTesting'
         autoExporting: 0
         enabled: 0
@@ -1488,9 +1488,9 @@ module:
         hash: 945aee5db75d34471f13522daf20765a
         size: 1855
       ../.im.will.yml:
-        hash: 856889e097dc2ff21ebfdb35873a1406
-        size: 4976
-  ../.module/wModuleForTesting1/:
+        hash: 79b27ee61127e20e8f0aa6fd5d732702
+        size: 4974
+  ../.module/ModuleForTesting1/:
     about:
       name: wModuleForTesting1
       org: noorg
@@ -1595,7 +1595,7 @@ module:
       entry.proto.no.tests:
         criterion:
           tests: no.tests
-        path: proto/dwtools/abase/l1/Include.s
+        path: proto/dwtools/abase/l1/testing1/Include.s
       entry.proto.only.tests:
         criterion:
           tests: only.tests
@@ -1605,13 +1605,13 @@ module:
           debug: debug
           raw: raw
           content: prime
-        path: '{path::out.*=1}/proto/dwtools/abase/l1/Include.s'
+        path: '{path::out.*=1}/proto/dwtools/abase/l1/testing1/Include.s'
       entry.out.raw.debug.release:
         criterion:
           debug: release
           raw: raw
           content: prime
-        path: '{path::out.*=1}/proto/dwtools/abase/l1/Include.s'
+        path: '{path::out.*=1}/proto/dwtools/abase/l1/testing1/Include.s'
       entry.out.compiled.debug.debug:
         criterion:
           debug: debug
@@ -1625,13 +1625,7 @@ module:
           content: prime
         path: '{path::out.*=}/source/Index.s'
     submodule:
-      Self:
-        path: 'hd://.'
-        autoExporting: 0
-        enabled: 0
-        criterion:
-          development: 1
-      wTesting:
+      Testing:
         path: 'npm:///wTesting'
         autoExporting: 0
         enabled: 0
@@ -2186,10 +2180,10 @@ module:
           - 'build::release'
           - 'build::npm'
     consistency:
-      ../.module/wModuleForTesting1/.ex.will.yml: *ref_6
-      ../.module/wModuleForTesting1/.im.will.yml: *ref_7
-      ../.module/wModuleForTesting1/out/wModuleForTesting1.out.will.yml: *ref_8
-  ../.module/wModuleForTesting1/out/wModuleForTesting1.out:
+      ../.module/ModuleForTesting1/.ex.will.yml: *ref_6
+      ../.module/ModuleForTesting1/.im.will.yml: *ref_7
+      ../.module/ModuleForTesting1/out/wModuleForTesting1.out.will.yml: *ref_8
+  ../.module/ModuleForTesting1/out/wModuleForTesting1.out:
     about:
       name: wModuleForTesting1
       org: noorg
@@ -2294,7 +2288,7 @@ module:
       entry.proto.no.tests:
         criterion:
           tests: no.tests
-        path: ../proto/dwtools/abase/l1/Include.s
+        path: ../proto/dwtools/abase/l1/testing1/Include.s
       entry.proto.only.tests:
         criterion:
           tests: only.tests
@@ -2304,13 +2298,13 @@ module:
           debug: debug
           raw: raw
           content: prime
-        path: '{path::out.*=1}/proto/dwtools/abase/l1/Include.s'
+        path: '{path::out.*=1}/proto/dwtools/abase/l1/testing1/Include.s'
       entry.out.raw.debug.release:
         criterion:
           debug: release
           raw: raw
           content: prime
-        path: '{path::out.*=1}/proto/dwtools/abase/l1/Include.s'
+        path: '{path::out.*=1}/proto/dwtools/abase/l1/testing1/Include.s'
       entry.out.compiled.debug.debug:
         criterion:
           debug: debug
@@ -2337,21 +2331,16 @@ module:
         path:
           - ../proto
           - ../proto/dwtools
+          - ../proto/dwtools/Tools.s
           - ../proto/dwtools/abase
           - ../proto/dwtools/abase/l1
-          - ../proto/dwtools/abase/l1/Include.s
-          - ../proto/dwtools/abase/l1/l1
-          - ../proto/dwtools/abase/l1/l1/ModuleForTesting1.s
+          - ../proto/dwtools/abase/l1/testing1
+          - ../proto/dwtools/abase/l1/testing1/Include.s
+          - ../proto/dwtools/abase/l1/testing1/ModuleForTesting1.s
           - ../proto/dwtools/abase/l1.test
           - ../proto/dwtools/abase/l1.test/ModuleForTesting1.test.s
     submodule:
-      Self:
-        path: 'hd://..'
-        autoExporting: 0
-        enabled: 0
-        criterion:
-          development: 1
-      wTesting:
+      Testing:
         path: 'npm:///wTesting'
         autoExporting: 0
         enabled: 0
@@ -2989,12 +2978,12 @@ module:
           content: proto
           export: 1
     consistency:
-      ../.module/wModuleForTesting1/out/wModuleForTesting1.out.will.yml:
-        hash: a27c88b8461427fd08f6ee47117e05e0
-        size: 38053
-      ../.module/wModuleForTesting1/.ex.will.yml:
+      ../.module/ModuleForTesting1/out/wModuleForTesting1.out.will.yml:
+        hash: 54ae911b147c19797ad80401792063b2
+        size: 38676
+      ../.module/ModuleForTesting1/.ex.will.yml:
         hash: cb8e18ffa43d15a96d796fd81fa20120
         size: 1855
-      ../.module/wModuleForTesting1/.im.will.yml:
-        hash: 552773b8e3ee39ec5d575ea990c02c0d
-        size: 4835
+      ../.module/ModuleForTesting1/.im.will.yml:
+        hash: 61158bfe28020fc446901fcb902af53b
+        size: 4862
