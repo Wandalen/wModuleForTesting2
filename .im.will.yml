@@ -7,7 +7,7 @@ submodule :
   #    development : 1
   ModuleForTesting1 :
     path : git+https:///github.com/Wandalen/wModuleForTesting1.git/@gamma
-    enabled : 1
+    enabled : 0
   Testing :
     path : npm:///wTesting
     enabled : 0
