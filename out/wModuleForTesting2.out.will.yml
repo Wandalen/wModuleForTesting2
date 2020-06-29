@@ -2,15 +2,12 @@ format: outwillfile-2.0
 root:
   - wModuleForTesting2.out
 consistency:
-  wModuleForTesting2.out.will.yml: &ref_0
-    hash: 7b56c0fcfd53f71d44cbd33d29b308d3
-    size: 37865
-  ../.ex.will.yml: &ref_1
+  ../.ex.will.yml: &ref_0
     hash: 4f8e55fc211f61eef930c1a59b9bb00d
     size: 1856
-  ../.im.will.yml: &ref_2
-    hash: c38afd8611f85820e38fd4c2676125b3
-    size: 4974
+  ../.im.will.yml: &ref_1
+    hash: d2fe5a8521f9f9178dae886b44b80087
+    size: 4980
 module:
   wModuleForTesting2.out:
     about:
@@ -21,20 +18,20 @@ module:
         with another purpose.
       enabled: 1
       version: 0.1.0
-      interpreters:
+      interpreters: &ref_2
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords:
+      keywords: &ref_3
         - willbe
         - test
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
+      contributors: &ref_4
         - Kostiantyn Wandalen <wanalen@01.school>
         - Kryvoruchko Dmytro <dm.vict.kr@gmail.com>
       npm.name: wmodulefortesting2
-      npm.scripts:
+      npm.scripts: &ref_5
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -159,8 +156,8 @@ module:
         path:
           - ../proto
           - ../proto/dwtools
-          - ../proto/dwtools/Tools.s
           - ../proto/dwtools/testing
+          - ../proto/dwtools/testing/Basic.s
           - ../proto/dwtools/testing/l2
           - ../proto/dwtools/testing/l2/testing2
           - ../proto/dwtools/testing/l2/testing2/Include.s
@@ -591,7 +588,7 @@ module:
           debug: release
       reflect.proto.debug.raw:
         opts:
-          filePath: 'reflector::reflect.proto*'
+          filePath: 'reflector::reflect.proto.debug.raw'
         criterion:
           tests: no.tests
           debug: debug
@@ -601,7 +598,7 @@ module:
           - files.reflect
       reflect.proto.release.raw:
         opts:
-          filePath: 'reflector::reflect.proto*'
+          filePath: 'reflector::reflect.proto.release.raw'
         criterion:
           tests: no.tests
           debug: release
@@ -611,7 +608,7 @@ module:
           - files.reflect
       reflect.proto.debug.compiled:
         opts:
-          filePath: 'reflector::reflect.proto*'
+          filePath: 'reflector::reflect.proto.debug.compiled'
         criterion:
           tests: no.tests
           debug: debug
@@ -621,7 +618,7 @@ module:
           - files.reflect
       reflect.proto.release.compiled:
         opts:
-          filePath: 'reflector::reflect.proto*'
+          filePath: 'reflector::reflect.proto.release.compiled'
         criterion:
           tests: no.tests
           debug: release
@@ -632,7 +629,7 @@ module:
       transpile.proto.raw:
         opts:
           entry: 'path::entry.proto.no.tests'
-          filePath: 'reflector::transpile.proto.raw*'
+          filePath: 'reflector::transpile.proto.raw'
         criterion:
           raw: raw
           debug: release
@@ -642,7 +639,7 @@ module:
       transpile.proto.no.tests.compiled.debug:
         opts:
           entry: 'path::entry.proto.*=1'
-          filePath: 'reflector::transpile.proto.no.tests.compiled*'
+          filePath: 'reflector::transpile.proto.no.tests.compiled.debug'
         criterion:
           tests: no.tests
           raw: compiled
@@ -653,7 +650,7 @@ module:
       transpile.proto.no.tests.compiled.release:
         opts:
           entry: 'path::entry.proto.*=1'
-          filePath: 'reflector::transpile.proto.no.tests.compiled*'
+          filePath: 'reflector::transpile.proto.no.tests.compiled.release'
         criterion:
           tests: no.tests
           raw: compiled
@@ -665,7 +662,7 @@ module:
         opts:
           entry: 'path::entry.proto.*=1'
           external.before: '{path::out.*=1}/Main.s'
-          filePath: 'reflector::transpile.proto.only.tests.compiled*'
+          filePath: 'reflector::transpile.proto.only.tests.compiled.debug'
         criterion:
           tests: only.tests
           raw: compiled
@@ -677,7 +674,7 @@ module:
         opts:
           entry: 'path::entry.proto.*=1'
           external.before: '{path::out.*=1}/Main.s'
-          filePath: 'reflector::transpile.proto.only.tests.compiled*'
+          filePath: 'reflector::transpile.proto.only.tests.compiled.release'
         criterion:
           tests: only.tests
           raw: compiled
@@ -685,24 +682,6 @@ module:
           content: prime
         inherit:
           - files.transpile
-      exported.proto.export:
-        opts:
-          filePath: 'reflector::exported.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.files.proto.export:
-        opts:
-          filePath: 'reflector::exported.files.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
     build:
       proto.export:
         steps:
@@ -791,9 +770,8 @@ module:
           content: proto
           export: 1
     consistency:
-      wModuleForTesting2.out.will.yml: *ref_0
-      ../.ex.will.yml: *ref_1
-      ../.im.will.yml: *ref_2
+      ../.ex.will.yml: *ref_0
+      ../.im.will.yml: *ref_1
   ../:
     about:
       name: wModuleForTesting2
@@ -803,22 +781,13 @@ module:
         with another purpose.
       enabled: 1
       version: 0.1.0
-      interpreters:
-        - njs >= 10.0.0
-        - chrome >= 60.0.0
-        - firefox >= 60.0.0
-      keywords:
-        - willbe
-        - test
+      interpreters: *ref_2
+      keywords: *ref_3
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
-        - Kostiantyn Wandalen <wanalen@01.school>
-        - Kryvoruchko Dmytro <dm.vict.kr@gmail.com>
+      contributors: *ref_4
       npm.name: wmodulefortesting2
-      npm.scripts:
-        test: wtest .run proto/**
-        docgen: wdocgen .build proto
+      npm.scripts: *ref_5
     path:
       module.willfiles:
         criterion:
@@ -1473,8 +1442,5 @@ module:
         hash: 4f8e55fc211f61eef930c1a59b9bb00d
         size: 1856
       ../.im.will.yml:
-        hash: c38afd8611f85820e38fd4c2676125b3
-        size: 4974
-      wModuleForTesting2.out.will.yml:
-        hash: 7b56c0fcfd53f71d44cbd33d29b308d3
-        size: 37865
+        hash: d2fe5a8521f9f9178dae886b44b80087
+        size: 4980
