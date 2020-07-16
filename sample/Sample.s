@@ -1,4 +1,4 @@
-var _ = require( '../' )
+let _ = require( '../' )
 
 var result = _.mulOfNumbers( 1, 2, 3 );
 

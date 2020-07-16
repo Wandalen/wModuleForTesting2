@@ -5,7 +5,7 @@
 if( typeof module !== 'undefined' )
 {
 
-  var _ = require( '../l2/testing2/Include.s' );
+  let _ = require( '../l2/testing2/Include.s' );
 
   require( 'wTesting' );
 
@@ -36,7 +36,7 @@ function trivial( test )
 // declare
 // --
 
-var Self =
+let Self =
 {
 
   name : 'Tools.base.l2.ModuleForTesting2',
