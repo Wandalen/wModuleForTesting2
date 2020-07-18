@@ -6,3 +6,9 @@ Module for testing. This module is a test asset and not intended to be used with
 ```
 node sample/Sample.s
 ```
+
+## To add to your project
+```
+npm add 'wmodulefortesting2@alpha'
+```
+
