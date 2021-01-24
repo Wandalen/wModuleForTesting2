@@ -4,7 +4,7 @@ Module for testing. This module is a test asset and not intended to be used with
 
 ### Try out
 ```
-node sample/Sample.s
+node sample/trivial/Sample.s
 ```
 
 ## To add to your project
