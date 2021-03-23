@@ -3,6 +3,8 @@
 
 'use strict';
 
+let _ = require( '../../Basic.s' );
+
 // --
 // Routines
 // --
@@ -16,11 +18,14 @@ function mulOfNumbers()
   return result;
 }
 
+Object.assign( _, { mulOfNumbers } );
+
 // --
 // export
 // --
 
 if( typeof module !== 'undefined' && module !== null )
 module[ 'exports' ].mulOfNumbers = mulOfNumbers;
+module[ 'exports' ] = _;
 
 })();
