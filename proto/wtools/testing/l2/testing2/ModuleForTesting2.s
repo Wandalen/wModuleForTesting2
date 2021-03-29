@@ -3,10 +3,7 @@
 
 'use strict';
 
-if( typeof module !== 'undefined' )
-require( '../../Basic.s' );
-
-let _ = _global_._test_;
+let _ = require( '../../Basic.s' );
 
 // --
 // Routines
@@ -21,15 +18,14 @@ function mulOfNumbers()
   return result;
 }
 
-//
-
-_ = Object.assign( _, { mulOfNumbers } );
+Object.assign( _, { mulOfNumbers } );
 
 // --
 // export
 // --
 
 if( typeof module !== 'undefined' && module !== null )
+module[ 'exports' ].mulOfNumbers = mulOfNumbers;
 module[ 'exports' ] = _;
 
 })();
