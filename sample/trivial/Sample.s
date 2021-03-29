@@ -1,7 +1,5 @@
-if( typeof module !== 'undefined' )
-require( 'wmodulefortesting2' );
 
-let _ = _global_._test_;
+let _ = require( 'wmodulefortesting2' );
 
 var result = _.mulOfNumbers( 1, 2, 3 );
 
