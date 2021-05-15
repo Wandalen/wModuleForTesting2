@@ -2,12 +2,9 @@ format: outwillfile-2.0
 root:
   - wModuleForTesting2.out
 consistency:
-  ../.ex.will.yml: &ref_0
-    hash: 93996364c3051121713501642ddb538f
-    size: 1861
-  ../.im.will.yml: &ref_1
-    hash: cbd7c4751a58e6617bbe2091e6807bda
-    size: 4978
+  ../will.yml: &ref_0
+    hash: a0d9a336859931e4b95a63c4060d4bf4
+    size: 6612
 module:
   wModuleForTesting2.out:
     about:
@@ -18,20 +15,20 @@ module:
         used with another purpose.
       enabled: 1
       version: 0.1.0
-      interpreters: &ref_2
+      license: MIT
+      npm.name: wmodulefortesting2
+      author: Kostiantyn Wandalen <wanalen@01.school>
+      keywords: &ref_1
+        - willbe
+        - test
+      contributors: &ref_2
+        - Kostiantyn Wandalen <wanalen@01.school>
+        - Kryvoruchko Dmytro <dm.vict.kr@gmail.com>
+      interpreters: &ref_3
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords: &ref_3
-        - willbe
-        - test
-      license: MIT
-      author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: &ref_4
-        - Kostiantyn Wandalen <wanalen@01.school>
-        - Kryvoruchko Dmytro <dm.vict.kr@gmail.com>
-      npm.name: wmodulefortesting2
-      npm.scripts: &ref_5
+      npm.scripts: &ref_4
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -46,15 +43,11 @@ module:
       module.original.willfiles:
         criterion:
           predefined: 1
-        path:
-          - ../.ex.will.yml
-          - ../.im.will.yml
+        path: ../will.yml
       module.peer.willfiles:
         criterion:
           predefined: 1
-        path:
-          - ../.ex.will.yml
-          - ../.im.will.yml
+        path: ../will.yml
       module.peer.in:
         criterion:
           predefined: 1
@@ -173,11 +166,11 @@ module:
           - ../proto/wtools/testing/l2.test
           - ../proto/wtools/testing/l2.test/ModuleForTesting2.test.s
     submodule:
-      ModuleForTesting1:
+      wModuleForTesting1:
         path: 'git+https:///github.com/Wandalen/wModuleForTesting1.git/!alpha'
         autoExporting: 0
         enabled: 0
-      Testing:
+      wTesting:
         path: 'npm:///wTesting'
         autoExporting: 0
         enabled: 0
@@ -188,7 +181,7 @@ module:
         autoExporting: 0
         enabled: 0
         criterion:
-          debug: 1
+          development: 1
     reflector:
       reflect.proto.debug.raw:
         src:
@@ -784,8 +777,7 @@ module:
           content: proto
           export: 1
     consistency:
-      ../.ex.will.yml: *ref_0
-      ../.im.will.yml: *ref_1
+      ../will.yml: *ref_0
   ../:
     about:
       name: wModuleForTesting2
@@ -795,26 +787,22 @@ module:
         used with another purpose.
       enabled: 1
       version: 0.1.0
-      interpreters: *ref_2
-      keywords: *ref_3
       license: MIT
-      author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: *ref_4
       npm.name: wmodulefortesting2
-      npm.scripts: *ref_5
+      author: Kostiantyn Wandalen <wanalen@01.school>
+      keywords: *ref_1
+      contributors: *ref_2
+      interpreters: *ref_3
+      npm.scripts: *ref_4
     path:
       module.willfiles:
         criterion:
           predefined: 1
-        path:
-          - .ex.will.yml
-          - .im.will.yml
+        path: will.yml
       module.original.willfiles:
         criterion:
           predefined: 1
-        path:
-          - .ex.will.yml
-          - .im.will.yml
+        path: will.yml
       module.peer.willfiles:
         criterion:
           predefined: 1
@@ -916,11 +904,11 @@ module:
           - proto/wtools/testing/l2/testing2/Include.s
           - proto/node_modules/wmodulefortesting2
     submodule:
-      ModuleForTesting1:
+      wModuleForTesting1:
         path: 'git+https:///github.com/Wandalen/wModuleForTesting1.git/!alpha'
         autoExporting: 0
         enabled: 0
-      Testing:
+      wTesting:
         path: 'npm:///wTesting'
         autoExporting: 0
         enabled: 0
@@ -931,7 +919,7 @@ module:
         autoExporting: 0
         enabled: 0
         criterion:
-          debug: 1
+          development: 1
     reflector:
       reflect.proto.debug.raw:
         src:
@@ -1463,9 +1451,6 @@ module:
           - 'build::release'
           - 'build::npm'
     consistency:
-      ../.ex.will.yml:
-        hash: 93996364c3051121713501642ddb538f
-        size: 1861
-      ../.im.will.yml:
-        hash: cbd7c4751a58e6617bbe2091e6807bda
-        size: 4978
+      ../will.yml:
+        hash: a0d9a336859931e4b95a63c4060d4bf4
+        size: 6612
