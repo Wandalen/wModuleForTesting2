@@ -3,7 +3,7 @@
 
 'use strict';
 
-const _ = require( '../../Basic.s' );
+const _ = require( '../../Common.s' );
 
 // --
 // Routines
